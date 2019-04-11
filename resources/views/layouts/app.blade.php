@@ -55,6 +55,11 @@
                                 </a>
 
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                                    @auth
+                                        <a class="dropdown-item" href="{{ route('channels.show', auth()->user()->channel->id) }}">
+                                            My Channel
+                                        </a>
+                                    @endauth
                                     <a class="dropdown-item" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
