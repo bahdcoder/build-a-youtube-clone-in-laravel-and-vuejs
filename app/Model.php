@@ -14,6 +14,8 @@ class Model extends BaseModel
      */
     public $incrementing = false;
 
+    protected $guarded = [];
+
     /**
      * The "booting" method of the model.
      *
