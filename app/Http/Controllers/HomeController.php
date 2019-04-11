@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace Laratube\Http\Controllers;
 
 use Illuminate\Http\Request;
 

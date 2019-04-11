@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Providers;
+namespace Laratube\Providers;
 
 use Illuminate\Support\ServiceProvider;
 
