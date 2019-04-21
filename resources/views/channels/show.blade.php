@@ -5,8 +5,10 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">
+                <div class="card-header d-flex justify-content-between">
                     {{ $channel->name }}
+
+                    <a href="{{ route('channel.upload', $channel->id) }}">Upload Videos</a>
                 </div>
 
                 <div class="card-body">
