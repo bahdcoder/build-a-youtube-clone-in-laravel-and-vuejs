@@ -63,4 +63,15 @@ class Channel extends Model implements HasMedia
             ->width(100)
             ->height(100);
     }
+
+    /**
+     * A channel has many subscriptions
+     * 
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     * 
+     */
+    public function subscriptions()
+    {
+        return $this->hasMany(Subscription::class);
+    }
 }
