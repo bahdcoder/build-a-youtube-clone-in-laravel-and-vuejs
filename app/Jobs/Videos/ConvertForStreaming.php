@@ -2,7 +2,9 @@
 
 namespace Laratube\Jobs\Videos;
 
+use FFMpeg;
 use Laratube\Video;
+use FFMpeg\Format\Video\X264;
 use Illuminate\Bus\Queueable;
 use Illuminate\Queue\SerializesModels;
 use Illuminate\Queue\InteractsWithQueue;
@@ -32,6 +34,16 @@ class ConvertForStreaming implements ShouldQueue
      */
     public function handle()
     {
-        echo 'converted';
+       $low = (new X264('aac'))->setKiloBitrate(100);
+       $mid = (new X264('aac'))->setKiloBitrate(250);
+       $high = (new X264('aac'))->setKiloBitrate(500);
+
+       FFMpeg::fromDisk('local')
+            ->open($this->video->path)
+            ->exportForHLS()
+            ->addFormat($low)
+            ->addFormat($mid)
+            ->addFormat($high)
+            ->save("public/videos/{$this->video->id}/{$this->video->id}.m3u8");
     }
 }
