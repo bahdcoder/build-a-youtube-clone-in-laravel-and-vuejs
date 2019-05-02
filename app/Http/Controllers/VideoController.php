@@ -15,4 +15,11 @@ class VideoController extends Controller
 
         return view('video', compact('video'));
     }
+
+    public function updateViews(Video $video)
+    {
+        $video->increment('views');
+
+        return response()->json([]);
+    }
 }
