@@ -1,6 +1,7 @@
 <?php
 use Laratube\Http\Controllers\UploadVideoController;
 use Laratube\Http\Controllers\VideoController;
+use Laratube\Http\Controllers\VoteController;
 
 /*
 |--------------------------------------------------------------------------
@@ -27,6 +28,7 @@ Route::put('videos/{video}', [VideoController::class, 'updateViews']);
 Route::put('videos/{video}/update', [VideoController::class, 'update'])->middleware(['auth'])->name('videos.update');
 
 Route::middleware(['auth'])->group(function () {
+    Route::post('votes/{video}/{type}', [VoteController::class, 'vote']);
     Route::post('channels/{channel}/videos', [UploadVideoController::class, 'store']);
     Route::get('channels/{channel}/videos', [UploadVideoController::class, 'index'])->name('channel.upload');
     Route::resource('channels/{channel}/subscriptions', 'SubscriptionController')->only(['store', 'destroy']);
