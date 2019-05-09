@@ -2,6 +2,7 @@
 
 use Faker\Generator as Faker;
 use Laratube\Video;
+use Laratube\Channel;
 
 $factory->define(Video::class, function (Faker $faker) {
     return [
