@@ -23,6 +23,7 @@
         "vue": "^2.5.17"
     },
     "dependencies": {
-        "numeral": "^2.0.6"
+        "numeral": "^2.0.6",
+        "vue-avatar": "^2.1.7"
     }
 }

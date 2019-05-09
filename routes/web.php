@@ -2,6 +2,7 @@
 use Laratube\Http\Controllers\UploadVideoController;
 use Laratube\Http\Controllers\VideoController;
 use Laratube\Http\Controllers\VoteController;
+use Laratube\Http\Controllers\CommentController;
 
 /*
 |--------------------------------------------------------------------------
@@ -25,6 +26,7 @@ Route::resource('channels', 'ChannelController');
 
 Route::get('videos/{video}', [VideoController::class, 'show']);
 Route::put('videos/{video}', [VideoController::class, 'updateViews']);
+Route::get('videos/{video}/comments', [CommentController::class, 'index']);
 Route::put('videos/{video}/update', [VideoController::class, 'update'])->middleware(['auth'])->name('videos.update');
 
 Route::middleware(['auth'])->group(function () {
