@@ -67,6 +67,41 @@
                 </form>
                 @endif
             </div>
+
+            <div class="card mt-5 p-5">
+                <div class="media">
+                    <img width="30" height="30" class="rounded-circle mr-3" src="https://picsum.photos/id/42/200/200">
+
+                    <div class="media-body">
+                        <h6 class="mt-0">Media heading</h6>
+                        <small>Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.</small>
+                        <div class="form-inline my-4 w-full">
+                                <input type="text" class="form-control form-control-sm w-80">
+                                <button class="btn btn-sm btn-primary">
+                                    <small>Add comment</small>
+                                </button>
+                        </div>
+                    
+                        <div class="media mt-3">
+                            <a class="mr-3" href="#">
+                                <img width="30" height="30" class="rounded-circle mr-3" src="https://picsum.photos/id/42/200/200">
+                            </a>
+                            <div class="media-body">
+                                <h6 class="mt-0">Media heading</h6>
+                                <small >Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.</small>
+
+                                <div class="form-inline my-4 w-full">
+                                        <input type="text" class="form-control form-control-sm w-80">
+                                        <button class="btn btn-sm btn-primary">
+                                            <small>Add comment</small>
+                                        </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
         </div>
     </div>
 </div>
@@ -91,6 +126,15 @@
 
         .thumbs-down {
             margin-left: 1rem;
+        }
+    </style>
+
+    <style>
+        .w-full {
+            width: 100% !important;
+        }
+        .w-80 {
+            width: 80% !important;
         }
     </style>
 @endsection
