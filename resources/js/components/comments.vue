@@ -6,24 +6,8 @@
                     <small>Add comment</small>
                 </button>
         </div>
-        <div class="media my-3" v-for="comment in comments.data">
-            <avatar :username="comment.user.name" class='mr-3' :size="30"></avatar>
-
-            <div class="media-body">
-                <h6 class="mt-0">
-                    {{ comment.user.name }}
-                </h6>
-                <small>
-                    {{ comment.body }}
-                </small>
-            
-                <div class="d-flex">
-                    <votes :default_votes="comment.votes" :entity_id="comment.id" :entity_owner="comment.user.id"></votes>
-                    <button class="btn btn-sm btn-default ml-2">Add Reply</button>
-                </div>
-                <replies :comment="comment"></replies>
-            </div>
-        </div>
+        
+        <Comment v-for='comment in comments.data' :key="comment.id" :comment="comment" />
 
         <div class="text-center">
             <button v-if="comments.next_page_url" @click="fetchComments" class="btn btn-success">
@@ -35,14 +19,13 @@
 </template>
 
 <script>
-    import Avatar from 'vue-avatar'
-    import Replies from './replies.vue'
+    
+    import Comment from './comment.vue'
 
     export default {
         props: ['video'],
         components: {
-            Avatar,
-            Replies
+            Comment
         },
         mounted() {
             this.fetchComments()
